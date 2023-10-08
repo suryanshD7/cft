@@ -8,6 +8,7 @@ Parameters:
     Default: 20
     MinValue: 20
     MaxValue: 6144
+    Description: Enter value in between 20 GB - 6144 GB
 
   DatabaseName:
     Type: String
