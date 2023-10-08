@@ -3,16 +3,28 @@ Parameters:
     Type: String
     NoEcho: true
 
+  AllocateStorage:
+    Type: Number
+    Default: 20
+    MinValue: 20
+    MaxValue: 6144
+
+  DatabaseName:
+    Type: String
+  
+  InstanceIdentifier:
+    Type: String  
+
 Resources:
   MyDB:
     Type: 'AWS::RDS::DBInstance'
     Properties:
-      AllocatedStorage: 20
+      AllocatedStorage: !Ref AllocateStorage
       AutoMinorVersionUpgrade: true
       AvailabilityZone: us-east-1d
       DBInstanceClass: db.t3.micro
-      DBInstanceIdentifier: personal-database
-      DBName: personal_database
+      DBInstanceIdentifier: !Ref InstanceIdentifier
+      DBName: !Ref DatabaseName
       DeletionProtection: false
       Engine: postgres
       MasterUsername: pgadmin
