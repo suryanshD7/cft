@@ -2,6 +2,7 @@ Parameters:
   MasterPassword:
     Type: String
     NoEcho: true
+    Default: None
 
   AllocateStorage:
     Type: Number
@@ -12,9 +13,11 @@ Parameters:
 
   DatabaseName:
     Type: String
+    Default: None
   
   InstanceIdentifier:
-    Type: String  
+    Type: String 
+    Default: None
 
 Resources:
   MyDB:
